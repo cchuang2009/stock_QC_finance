@@ -5,3 +5,4 @@ yfinance
 pipeline
 qiskit
 lightgbm
+joblib
