@@ -1,24 +1,31 @@
 import streamlit as st
 from pipeline import HybridEngine
 
-st.title("⚛️ Quantum + ML Alpha Engine")
+st.title("Quantum + ML Alpha Engine")
 
-engine = HybridEngine()
+if "engine" not in st.session_state:
+    st.session_state.engine = HybridEngine()
+
+engine = st.session_state.engine
 
 ticker = st.text_input("Ticker", "AAOI")
 
 if st.button("Train Model"):
+
     engine.train(ticker)
+
     st.success("Model trained")
 
 if st.button("Run Prediction"):
+
     try:
+
         result = engine.predict(ticker)
 
-        st.subheader("📊 Trading Signals")
+        st.subheader("Trading Signals")
+
         st.dataframe(result)
 
-        # show latest signal
         latest = result.iloc[-1]
 
         st.metric("Signal", latest["signal"])
@@ -26,4 +33,5 @@ if st.button("Run Prediction"):
         st.metric("Strength", round(latest["strength"], 3))
 
     except Exception as e:
+
         st.error(f"Error: {e}")

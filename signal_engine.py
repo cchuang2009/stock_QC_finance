@@ -1,15 +1,9 @@
-import numpy as np
-import pandas as pd
-
 class SignalEngine:
 
     def generate(self, df, probs):
-        """
-        df: feature dataframe (aligned)
-        probs: model output
-        """
 
         df = df.iloc[-len(probs):].copy()
+
         df["prob"] = probs
 
         signals = []
@@ -22,12 +16,16 @@ class SignalEngine:
             trend = row["trend"]
             accel = row["accel"]
 
-            # --- BUY ---
-            if prob > 0.7 and vol > 2 and trend > 0:
+            if prob > 0.68 and vol > 1.5 and trend > 0:
+                signal = "STRONG BUY"
+
+            elif prob > 0.58 and trend > 0 and accel > 0:
                 signal = "BUY"
 
-            # --- SELL ---
-            elif prob < 0.4 and vol > 2 and accel < 0:
+            elif prob < 0.32 and vol > 1.5:
+                signal = "STRONG SELL"
+
+            elif prob < 0.42 and trend < 0:
                 signal = "SELL"
 
             else:
