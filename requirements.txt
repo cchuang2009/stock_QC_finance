@@ -6,3 +6,4 @@ pipeline
 qiskit
 lightgbm
 joblib
+scikit-learn>=1.8.0
