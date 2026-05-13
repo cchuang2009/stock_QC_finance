@@ -108,7 +108,7 @@ TICKERS = [
     "aehr",
     "AG",
     "AGIX",
-    "AI"
+    "AI",
     "alab",
     "AMAT",
     "AMD",
