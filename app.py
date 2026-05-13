@@ -109,7 +109,7 @@ TICKERS = [
     "AG",
     "AGIX",
     "AI"
-    "alab",,
+    "alab",
     "AMAT",
     "AMD",
     "anet",
