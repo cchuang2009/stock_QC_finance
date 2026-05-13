@@ -105,11 +105,14 @@ st.header("🚀 Multi-Stock Quantum Scanner")
 
 TICKERS = [
     "AAOI",
+    "aehr",
     "AG",
     "AGIX",
-    "AI",
+    "AI"
+    "alab",,
     "AMAT",
     "AMD",
+    "anet",
     "BBAI",
     "BLSH",
     "BTG",
