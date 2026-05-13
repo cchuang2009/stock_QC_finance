@@ -64,6 +64,28 @@ Start app:
 Run scanner:
 
     python scanner.py
+    
+    
+# QC Finance v2
+
+Enhanced Quantum + ML hybrid trading system.
+
+New Features:
+- Predict future RETURNS instead of raw prices
+- Convert returns back into predicted prices
+- Ensemble prediction:
+  - LightGBM
+  - Ridge Regression
+- Quantum feature extraction
+- Confidence score
+- Signal engine
+- Multi-stock scanner
+
+## stable ML pipeline
+- feature-consistent architecture
+- scalable scanner
+- ensemble predictor
+- quantum-enhanced signal engine
 
 ## Notes
 

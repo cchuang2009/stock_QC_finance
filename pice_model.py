@@ -1,11 +1,11 @@
 import lightgbm as lgb
 
 
-class AlphaModel:
+class PricePredictor:
 
     def __init__(self):
 
-        self.model = lgb.LGBMClassifier(
+        self.model = lgb.LGBMRegressor(
             n_estimators=500,
             learning_rate=0.03,
             max_depth=4,
@@ -24,6 +24,6 @@ class AlphaModel:
     def predict(self, X):
 
         if not self.fitted:
-            raise ValueError("Model not trained")
+            raise ValueError("Price model not trained")
 
-        return self.model.predict_proba(X)[:, 1]
+        return self.model.predict(X)
